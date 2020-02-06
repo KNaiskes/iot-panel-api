@@ -1,13 +1,8 @@
 const express = require('express');
-
 const app = express();
 
-// const port = 3000;
+const lightRoutes = require('./api/routes/lights');
 
-app.use((req, res, next) => {
-    res.status(200).json({
-	message: 'Test app'
-    });
-});
+app.use('/lights', lightRoutes);
 
 module.exports = app;
